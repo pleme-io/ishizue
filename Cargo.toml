@@ -1,0 +1,24 @@
+[package]
+name = "ishizue"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.89.0"
+description = "Ishizue (礎) — core utilities and foundation library for Rust-based Neovim plugins"
+homepage = "https://github.com/pleme-io/ishizue"
+repository = "https://github.com/pleme-io/ishizue"
+readme = "README.md"
+license = "MIT"
+categories = ["text-editors"]
+keywords = ["neovim", "plugin", "utility", "foundation"]
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[lints.clippy]
+pedantic = { level = "warn", priority = -1 }
+missing_errors_doc = "allow"
+missing_panics_doc = "allow"
+
+[dependencies]
+nvim-oxi = { version = "0.5", features = ["neovim-0-11"] }
+tane = { path = "../tane", version = "0.1.0" }
